@@ -39,32 +39,32 @@
           container.id = 'cookie-consent-container';
           document.body.appendChild(container);
           
-          // Create the cookie consent script with debug mode disabled
+          // Create the cookie consent script with debug mode enabled
           const script = document.createElement('script');
-          script.src = "https://cookiebot25.vercel.app/api/cookie-consent?key=key-1744925171427-4e9ypja&debug=false";
+          script.src = "https://cookiebot25.vercel.app/api/cookie-consent?key=key-1744925171427-4e9ypja&debug=true";
           script.async = true;
           
           // Add error handling
           script.onerror = function() {
             console.error("Cookie consent script failed to load. Please check your API key and domain authorization.");
-            if (false) {
+            if (true) {
               alert("Cookie consent script failed to load. Check console for details.");
             }
           };
           
           // Add load event to verify script loaded correctly
           script.onload = function() {
-            if (false) {
+            if (true) {
               console.log("Cookie consent script loaded successfully!");
             }
           };
           
           document.body.appendChild(script);
           
-          if (false) {
+          if (true) {
             console.log("Cookie consent container created");
             console.log("API Key: key-1744925171427-4e9ypja");
-            console.log("Script URL: https://cookiebot25.vercel.app/api/cookie-consent?key=key-1744925171427-4e9ypja&debug=false");
+            console.log("Script URL: https://cookiebot25.vercel.app/api/cookie-consent?key=key-1744925171427-4e9ypja&debug=true");
           }
         })();
     </script>
