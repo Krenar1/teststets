@@ -34,37 +34,56 @@
     <!-- The cookie consent script is already here -->
     <script>
         (function() {
-          // Create container for the cookie consent
-          const container = document.createElement('div');
-          container.id = 'cookie-consent-container';
-          document.body.appendChild(container);
+          // Define the absolute URL with protocol to avoid relative URL issues
+          const COOKIE_CONSENT_URL = "https://cookiebot25.vercel.app/api/cookie-consent";
+          const API_KEY = "key-1744927401456-w4s3qud";
+          const DEBUG = true;
           
-          // Create the cookie consent script with debug mode enabled
-          const script = document.createElement('script');
-          script.src = "https://cookiebot25.vercel.app/api/cookie-consent?key=key-1744925171427-4e9ypja&debug=true";
-          script.async = true;
+          // Log what we're doing if debug is enabled
+          if (DEBUG) {
+            console.log("Cookie Consent: Initializing...");
+            console.log("Cookie Consent: API URL =", COOKIE_CONSENT_URL);
+            console.log("Cookie Consent: API Key =", API_KEY);
+          }
           
-          // Add error handling
-          script.onerror = function() {
-            console.error("Cookie consent script failed to load. Please check your API key and domain authorization.");
-            if (true) {
-              alert("Cookie consent script failed to load. Check console for details.");
-            }
-          };
-          
-          // Add load event to verify script loaded correctly
-          script.onload = function() {
-            if (true) {
-              console.log("Cookie consent script loaded successfully!");
-            }
-          };
-          
-          document.body.appendChild(script);
-          
-          if (true) {
-            console.log("Cookie consent container created");
-            console.log("API Key: key-1744925171427-4e9ypja");
-            console.log("Script URL: https://cookiebot25.vercel.app/api/cookie-consent?key=key-1744925171427-4e9ypja&debug=true");
+          try {
+            // Create container for the cookie consent
+            const container = document.createElement('div');
+            container.id = 'cookie-consent-container';
+            document.body.appendChild(container);
+            
+            // Create the cookie consent script with absolute URL
+            const script = document.createElement('script');
+            
+            // Construct URL with URLSearchParams to avoid issues
+            const url = new URL(COOKIE_CONSENT_URL);
+            url.searchParams.append("key", API_KEY);
+            url.searchParams.append("debug", DEBUG ? "true" : "false");
+            
+            // Set the fully constructed URL
+            script.src = url.toString();
+            script.async = true;
+            
+            // Add error handling
+            script.onerror = function() {
+              console.error("Cookie Consent: Script failed to load from " + script.src);
+              if (DEBUG) {
+                alert("Cookie consent script failed to load. Check console for details.");
+              }
+            };
+            
+            // Add load event to verify script loaded correctly
+            script.onload = function() {
+              if (DEBUG) {
+                console.log("Cookie Consent: Script loaded successfully!");
+              }
+            };
+            
+            // Append the script to the document
+            document.body.appendChild(script);
+            
+          } catch (error) {
+            console.error("Cookie Consent: Error initializing", error);
           }
         })();
     </script>
