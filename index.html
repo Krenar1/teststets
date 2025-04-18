@@ -3,89 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A simple website">
-    <title>My Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Sample HTML</title>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Website</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section>
-            <h2>About</h2>
-            <p>This is a simple website template. Replace this text with your own content.</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 My Website. All rights reserved.</p>
-    </footer>
-
-    <!-- The cookie consent script is already here -->
-    <script>
-        (function() {
-          // Define the absolute URL with protocol to avoid relative URL issues
-          const COOKIE_CONSENT_URL = "https://cookiebot25.vercel.app/api/cookie-consent";
-          const API_KEY = "key-1744927401456-w4s3qud";
-          const DEBUG = true;
-          
-          // Log what we're doing if debug is enabled
-          if (DEBUG) {
-            console.log("Cookie Consent: Initializing...");
-            console.log("Cookie Consent: API URL =", COOKIE_CONSENT_URL);
-            console.log("Cookie Consent: API Key =", API_KEY);
-          }
-          
-          try {
-            // Create container for the cookie consent
-            const container = document.createElement('div');
-            container.id = 'cookie-consent-container';
-            document.body.appendChild(container);
-            
-            // Create the cookie consent script with absolute URL
-            const script = document.createElement('script');
-            
-            // Construct URL with URLSearchParams to avoid issues
-            const url = new URL(COOKIE_CONSENT_URL);
-            url.searchParams.append("key", API_KEY);
-            url.searchParams.append("debug", DEBUG ? "true" : "false");
-            
-            // Set the fully constructed URL
-            script.src = url.toString();
-            script.async = true;
-            
-            // Add error handling
-            script.onerror = function() {
-              console.error("Cookie Consent: Script failed to load from " + script.src);
-              if (DEBUG) {
-                alert("Cookie consent script failed to load. Check console for details.");
-              }
-            };
-            
-            // Add load event to verify script loaded correctly
-            script.onload = function() {
-              if (DEBUG) {
-                console.log("Cookie Consent: Script loaded successfully!");
-              }
-            };
-            
-            // Append the script to the document
-            document.body.appendChild(script);
-            
-          } catch (error) {
-            console.error("Cookie Consent: Error initializing", error);
-          }
-        })();
-    </script>
+    <h1>Welcome to My Website</h1>
+    <p>This is a sample HTML page with a cookie consent script.</p>
+    
+    <!-- Copy this exactly from your dashboard -->
+    <!-- Cookie Consent Banner Script -->
+    <!-- Cookie Consent Banner Script -->
+<!-- Cookie Consent Banner Script -->
+<script src="https://v0-cookie-banner-system-3q7ojh7q1.vercel.app/script.js" data-domain="teststets.vercel.app"></script>
 </body>
 </html>
